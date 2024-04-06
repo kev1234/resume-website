@@ -1,0 +1,27 @@
+<main class="d-flex flex-nowrap">
+  <div id="sidebar" class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark">
+      <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <span class="fs-4">Keven Philibert</span>
+      </a>
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li><a href="/" id="home" class="nav-link text-white">Accueil</a></li>
+        <li><a href="/experience" id="experience" class="nav-link text-white">Expérience professionnelle</a></li>
+        <li><a href="/techno" id="techno" class="nav-link text-white">Compétence</a></li>
+        <li><a href="/education" id="education" class="nav-link text-white">Éducation</a></li>
+        <li><a href="/about" id="about" class="nav-link text-white">À propos</a></li>
+      </ul>
+      <hr>
+      <ul class="nav col-md-4 justify-content-start list-unstyled d-flex" width="100%">
+        <li class="ms-3"><a class="text-body-secondary social-network-icon" href="https://www.linkedin.com/in/keven-philibert-23a9a1260/"><img src="/images/linkedin.svg" alt="Linkedin icon"></a></li>
+        <li class="ms-3"><a class="text-body-secondary social-network-icon" href="https://github.com/kev1234/"><img src="/images/github.svg" alt="Github icon"></a></li>
+        <li class="ms-3 pb-4"><a class="text-body-secondary social-network-icon" href="mailto:kevenphilibert@hotmail.com"><img src="/images/envelope.svg" alt="Mail icon"></a></li>
+      </ul>
+      <p>© <%=new Date().getFullYear(); %> Keven Philibert, <br> Tous Droits Réservés</p>
+  </div>
+  <div class="b-example-divider b-example-vr"></div>
+</main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    $("#" + "<%=elementID %>").addClass("active");
+</script>

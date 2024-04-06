@@ -1,0 +1,62 @@
+<%- include ("partials/header.ejs") %>
+    <body>
+        <div id="container">
+            <%- include ("partials/sidebar.ejs") %>
+            <div class="subcontainer">
+                <div class="separation">
+                    <h1 class="featurette-heading fw-normal lh-1"><%=title%></h1>
+                </div>
+                <div class="container" id="icon-grid">
+                    <hr class="featurette-divider">
+                    <h2 class="featurette-heading fw-normal lh-1">Langages</h2>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+                        <% if (locals.languages && languages.length > 0) { %>
+                            <% languages.forEach((language) => { %>
+                                <div class="col d-flex align-items-start">
+                                <div>
+                                    <h3 class="featurette-heading fw-normal lh-1"><%=language.type%></h3>
+                                    <% if (language.names && language.names.length > 0) { %>
+                                    <ul>
+                                        <% language.names.forEach((name) => { %>
+                                            <li class="lead"><%=name%></li>
+                                        <% }) %>
+                                    </ul>
+                                    <% } %>
+                                </div>
+                            </div>
+                            <% }) %>
+                        <%} else {%>
+                            <h3 class="featurette-heading fw-normal lh-1">Données indisponibles</h3>
+                        <%}%>
+                    </div>
+                </div>
+                <div class="container" id="icon-grid">
+                    <hr class="featurette-divider">
+                    <h2 class="featurette-heading fw-normal lh-1">Outils de développement</h2>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+                        <% if (locals.tools && tools.length > 0) { %>
+                            <% tools.forEach((tool) => { %>
+                                <div class="col d-flex align-items-start">
+                                <div>
+                                    <h3 class="featurette-heading fw-normal lh-1"><%=tool.type%></h3>
+                                    <% if (tool.names && tool.names.length > 0) { %>
+                                    <ul>
+                                        <% tool.names.forEach((name) => { %>
+                                            <li class="lead"><%=name%></li>
+                                        <% }) %>
+                                    </ul>
+                                    <% } %>
+                                </div>
+                            </div>
+                            <% }) %>
+                        <%} else {%>
+                            <h3 class="featurette-heading fw-normal lh-1">Données indisponibles</h3>
+                        <%}%>
+                    </div>
+                    <hr class="featurette-divider">
+                </div>
+                <div class="separation"></div>
+            </div>
+        </div>
+    </body>
+</html>

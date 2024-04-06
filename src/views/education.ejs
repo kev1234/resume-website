@@ -1,0 +1,34 @@
+<%- include ("partials/header.ejs") %>
+    <body>
+        <div id="container">
+            <%- include ("partials/sidebar.ejs") %>
+            <div class="subcontainer">
+                <div class="separation">
+                    <h1 class="featurette-heading fw-normal lh-1"><%=title%></h1>
+                </div>
+                <div class="container">
+                  <div class="container marketing">
+                    <div class="row">
+                      <% if (locals.formations && formations.length > 0) { %>
+                        <% formations.forEach((formation) => { %>
+                          <div class="col-lg-4">
+                            <img class="rounded-logo" src="/images/<%=formation.picture.filename%>" alt="<%=formation.picture.name%>">
+                            <h2 class="featurette-heading fw-normal lh-1"><%=formation.company%></h2>
+                            <h3><span class="text-body-secondary"><%=formation.year%></span></h3>
+                            <p class="lead"><%=formation.description%></p>
+                            <% if (formation.link) { %>
+                              <p><a class="btn btn-secondary" href="<%=formation.link%>">Pour en savoir plus »</a></p>
+                            <% } %>
+                          </div>
+                        <% }) %>
+                    <%} else {%>
+                        <h2 class="featurette-heading fw-normal lh-1">Données indisponibles</h2>
+                    <%}%>
+                    </div>
+                  </div>
+                </div>
+                <div class="separation"></div>
+            </div>
+        </div>
+    </body>
+</html>

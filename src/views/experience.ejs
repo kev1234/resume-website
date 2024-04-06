@@ -1,0 +1,39 @@
+<%- include ("partials/header.ejs") %>
+    <body>
+        <div id="container">
+            <%- include ("partials/sidebar.ejs") %>
+            <div class="subcontainer">
+                <div class="separation">
+                    <h1 class="featurette-heading fw-normal lh-1"><%=title%></h1>
+                </div>
+                <div class="container">
+                    <% if (locals.jobs && jobs.length > 0) { %>
+                        <%var i = 0;%>
+                        <% jobs.forEach((job) => { %>
+                          <hr class="featurette-divider">
+                          <div class="row featurette">
+                            <div class="col-md-7 <%=(i % 2 === 0 ? "" : "order-md-2");%>">
+                              <h2 class="featurette-heading fw-normal lh-1"><%=job.company%> | <%=job.title%></h2>
+                              <h3><span class="text-body-secondary"><%=job.year%></span></h3>
+                              <p class="lead"><%=job.description%></p>
+                              <p class="lead"><%=job.language%></p>
+                              <% if (job.link) { %>
+                                <p><a class="btn btn-secondary" href="<%=job.link%>">Pour en savoir plus »</a></p>
+                              <% } %>
+                            </div>
+                            <div class="col-md-5 order-md-1">
+                                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="/images/<%=job.picture.filename%>" alt="<%=job.picture.name%>">
+                            </div>
+                          </div>
+                        <%i++;%>
+                        <% }) %>
+                        <hr class="featurette-divider">
+                    <%} else {%>
+                        <h2 class="featurette-heading fw-normal lh-1">Données indisponibles</h2>
+                    <%}%>
+                </div>
+                <div class="separation"></div>
+            </div>
+        </div>
+    </body>
+</html>

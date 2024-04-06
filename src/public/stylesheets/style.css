@@ -1,0 +1,86 @@
+/*GENERIC STUFF*/
+#container {
+    display: flex;
+    background-color: #dfdfdd;
+    min-height: 100vh;
+}
+
+.subcontainer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 280px;
+}
+
+.separation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    color: white;
+    background-color: rgb(52, 79, 128);
+}
+
+/*HOME SCREEN*/
+#home-container {
+    display: flex;
+    background-image: url("/images/programming_background.jpg");
+    background-size: 100%, 100%;
+    min-height: 100vh;
+}
+
+.centered-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    padding-left: 280px;
+}
+
+.centered-subcontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 500px;
+    height: 500px;
+    border-radius: 20%;
+    gap: 12px;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
+/*EDUCATION SCREEN*/
+.rounded-logo {
+    width: 140px; 
+    height: 140px;
+    border-radius: 50%;
+}
+
+
+/*SIDEBAR*/
+#sidebar {
+    width: 280px;
+    height: 100%;
+    position: fixed;
+}
+
+#sidebar ul {
+    width: 100%;
+}
+
+.social-network-icon img {
+    width: 32px;
+}
+
+.social-network-icon img:hover {
+    background-color: rgb(52, 79, 128);
+}
+
+a.nav-link:hover {
+    background-color: rgb(52, 79, 128);
+}
