@@ -1,14 +1,19 @@
 import "dotenv/config"
+import { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import path from "path";
 import express from "express"
 import bodyParser from "body-parser";
 import axios from "axios";
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
 const BASE_API_URL = process.env.BASE_URL; 
 const port = process.env.PORT;
 const app = express();
 
-app.use(express.static('public'));
+app.use(express.static('src/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
+app.set('views', path.join(__dirname, '/views'));
 
 app.get("/", (req, res) => {
     res.render("home.ejs", { elementID: "home", title: "Keven Philibert"});
