@@ -2,7 +2,7 @@
   <div id="sidebar" class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark">
       <span class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white fs-4">Keven Philibert</span>
       <hr>
-      <ul class="nav nav-pills flex-column mb-auto">
+      <ul class="nav nav-pills flex-column mb-auto sidebar-list">
         <li>
           <a href="/" id="home" class="nav-link text-white">
             <img src="/images/house-door.svg" class="me-2 mb-1">Accueil
@@ -56,7 +56,7 @@
           $(this).text("");
           $(this).append(`<img src=\"${src}\" class=\"me-2 mb-1\">`);
         });
-        $("ul").addClass("text-center");
+        $("ul.sidebar-list").addClass("text-center");
       } else {
         var sidebarTitle = $("#sidebar span").text();
         if (sidebarTitle != "Keven Philibert") {
