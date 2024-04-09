@@ -3,7 +3,7 @@
         <div id="container">
             <%- include ("partials/sidebar.ejs") %>
             <div class="subcontainer">
-                <div class="separation">
+                <div class="separation mb-4">
                     <h1 class="featurette-heading fw-normal lh-1"><%=title%></h1>
                 </div>
                 <div class="container">
@@ -17,7 +17,7 @@
                             <h3><span class="text-body-secondary"><%=formation.year%></span></h3>
                             <p class="lead"><%=formation.description%></p>
                             <% if (formation.link) { %>
-                              <p><a class="btn btn-secondary" href="<%=formation.link%>">Pour en savoir plus »</a></p>
+                              <p><a class="btn btn-secondary" href="<%=formation.link%>" target="_blank">Pour en savoir plus »</a></p>
                             <% } %>
                           </div>
                         <% }) %>
@@ -27,7 +27,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="separation"></div>
+                <div class="separation mt-4"></div>
             </div>
         </div>
     </body>

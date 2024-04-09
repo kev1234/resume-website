@@ -6,11 +6,14 @@
 }
 
 .subcontainer {
-    display: flex;
-    width: 100%;
     flex-direction: column;
     justify-content: space-between;
-    padding-left: 280px;
+}
+
+.subcontainer, .centered-container {
+    display: flex;
+    width: 100%;
+    padding-left: 300px;
 }
 
 .separation {
@@ -31,13 +34,10 @@
 }
 
 .centered-container {
-    display: flex;
     height: 100vh;
-    width: 100%;
     align-items: center;
     justify-content: center;
     align-self: center;
-    padding-left: 280px;
 }
 
 .centered-subcontainer {
@@ -64,13 +64,17 @@
 
 /*SIDEBAR*/
 #sidebar {
-    width: 280px;
+    width: 300px;
     height: 100%;
     position: fixed;
 }
 
 #sidebar ul {
     width: 100%;
+}
+
+#sidebar span {
+    width: fit-content;
 }
 
 .social-network-icon img {
@@ -83,4 +87,28 @@
 
 a.nav-link:hover {
     background-color: rgb(52, 79, 128);
+}
+
+/*MOBILE DEVICES*/
+@media screen and (max-width: 700px) {
+    #sidebar {
+        width: 120px;
+    }
+
+    .subcontainer, .centered-container {
+        padding-left: 120px;
+    }
+
+    a.nav-link {
+        width: 100px;
+    }
+
+    a.nav-link img {
+        width: 24px;
+    }
+
+    .social-network-icon img {
+        width: 24px;
+    }
+    
 }

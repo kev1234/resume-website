@@ -1,21 +1,39 @@
 <main class="d-flex flex-nowrap">
   <div id="sidebar" class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark">
-      <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-        <span class="fs-4">Keven Philibert</span>
-      </a>
+      <span class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white fs-4">Keven Philibert</span>
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
-        <li><a href="/" id="home" class="nav-link text-white">Accueil</a></li>
-        <li><a href="/experience" id="experience" class="nav-link text-white">Expérience professionnelle</a></li>
-        <li><a href="/techno" id="techno" class="nav-link text-white">Compétence</a></li>
-        <li><a href="/education" id="education" class="nav-link text-white">Éducation</a></li>
-        <li><a href="/about" id="about" class="nav-link text-white">À propos</a></li>
+        <li>
+          <a href="/" id="home" class="nav-link text-white">
+            <img src="/images/house-door.svg" class="me-2 mb-1">Accueil
+          </a>
+        </li>
+        <li>
+          <a href="/experience" id="experience" class="nav-link text-white">
+            <img src="/images/briefcase.svg" class="me-2 mb-1">Expériences professionnelles
+          </a>
+        </li>
+        <li>
+          <a href="/techno" id="techno" class="nav-link text-white">
+            <img src="/images/lightbulb.svg" class="me-2 mb-1">Compétences
+          </a>
+        </li>
+        <li>
+          <a href="/education" id="education" class="nav-link text-white">
+            <img src="/images/book.svg" class="me-2 mb-1">Éducation
+          </a>
+        </li>
+        <li>
+          <a href="/about" id="about" class="nav-link text-white">
+            <img src="/images/info-circle.svg" class="me-2 mb-1">À propos
+          </a>
+        </li>
       </ul>
       <hr>
-      <ul class="nav col-md-4 justify-content-start list-unstyled d-flex" width="100%">
-        <li class="ms-3"><a class="text-body-secondary social-network-icon" href="https://www.linkedin.com/in/keven-philibert-23a9a1260/"><img src="/images/linkedin.svg" alt="Linkedin icon"></a></li>
-        <li class="ms-3"><a class="text-body-secondary social-network-icon" href="https://github.com/kev1234/"><img src="/images/github.svg" alt="Github icon"></a></li>
-        <li class="ms-3 pb-4"><a class="text-body-secondary social-network-icon" href="mailto:kevenphilibert@hotmail.com"><img src="/images/envelope.svg" alt="Mail icon"></a></li>
+      <ul class="nav col-md-4 justify-content-start list-unstyled d-flex">
+        <li class="ms-4 pb-2"><a class="text-body-secondary social-network-icon" href="https://www.linkedin.com/in/keven-philibert-23a9a1260/"><img src="/images/linkedin.svg" alt="Linkedin icon"></a></li>
+        <li class="ms-4 pb-2"><a class="text-body-secondary social-network-icon" href="https://github.com/kevenphilibert/"><img src="/images/github.svg" alt="Github icon"></a></li>
+        <li class="ms-4 pb-4"><a class="text-body-secondary social-network-icon" href="mailto:kevenphilibert@hotmail.com"><img src="/images/envelope.svg" alt="Mail icon"></a></li>
       </ul>
       <p>© <%=new Date().getFullYear(); %> Keven Philibert, <br> Tous Droits Réservés</p>
   </div>
@@ -24,4 +42,26 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
     $("#" + "<%=elementID %>").addClass("active");
+    
+    adaptToScreenSize();
+    $(window).resize(function () {
+      adaptToScreenSize();
+    });
+
+    function adaptToScreenSize() {
+      if ($(window).width() < 700) {
+        $("#sidebar span").text("KP");
+        $("a.nav-link").each(function () {
+          var src = $(this).children().attr('src');
+          $(this).text("");
+          $(this).append(`<img src=\"${src}\" class=\"me-2 mb-1\">`);
+        });
+        $("ul").addClass("text-center");
+      } else {
+        var sidebarTitle = $("#sidebar span").text();
+        if (sidebarTitle != "Keven Philibert") {
+          location.reload();
+        }
+      }
+    }
 </script>

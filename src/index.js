@@ -21,13 +21,13 @@ app.get("/", (req, res) => {
 
 app.get("/experience", async (req, res) => {
     const data = await getRequest("/jobs");
-    res.render("experience.ejs", { elementID: "experience", title: "Expérience Professionnelle", jobs : data});
+    res.render("experience.ejs", { elementID: "experience", title: "Expériences Professionnelles", jobs : data});
 });
 
 app.get("/techno", async (req, res) => {
     const data1 = await getRequest("/languages");
     const data2 = await getRequest("/tools");
-    res.render("techno.ejs", { elementID: "techno", title: "Compétence",  languages: data1, tools: data2});
+    res.render("techno.ejs", { elementID: "techno", title: "Compétences",  languages: data1, tools: data2});
 });
 
 app.get("/education", async (req, res) => {
