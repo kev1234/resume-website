@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 
 app.get("/experience", async (req, res) => {
     const data = await getRequest("/jobs");
-    res.render("experience.ejs", { elementID: "experience", title: "Expériences Professionnelles", jobs : data});
+    res.render("experience.ejs", { elementID: "experience", title: "Expérience Professionnelle", jobs : data});
 });
 
 app.get("/techno", async (req, res) => {
