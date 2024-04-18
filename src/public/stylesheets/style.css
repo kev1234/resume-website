@@ -13,7 +13,7 @@
 .subcontainer, .centered-container {
     display: flex;
     width: 100%;
-    padding-left: 300px;
+    padding-left: 280px;
 }
 
 .separation {
@@ -68,7 +68,7 @@
 
 /*SIDEBAR*/
 #sidebar {
-    width: 300px;
+    width: 280px;
     height: 100%;
     position: fixed;
 }
@@ -96,15 +96,15 @@ a.nav-link:hover {
 /*MOBILE DEVICES*/
 @media screen and (max-width: 700px) {
     #sidebar {
-        width: 120px;
+        width: 80px;
     }
 
     .subcontainer, .centered-container {
-        padding-left: 120px;
+        padding-left: 80px;
     }
 
     a.nav-link {
-        width: 100px;
+        width: 60px;
     }
 
     a.nav-link img {
