@@ -61,6 +61,10 @@
     border-radius: 50%;
 }
 
+/*ABOUT SCREEN*/
+.jumbotron {
+    background-color: rgb(197, 206, 224) !important;
+}
 
 /*SIDEBAR*/
 #sidebar {
